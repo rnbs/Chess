@@ -10,6 +10,24 @@ public class Square {
     private final char columnName;
     private Piece piece;
 
+    public Square(Colour colour, int rowNumber, char columnName, Piece piece) {
+        this.colour = colour;
+        this.rowNumber = rowNumber;
+        this.columnName = columnName;
+        this.piece = piece;
+    }
+
+    public Square(Colour colour, int rowNumber, char columnName) {
+        this.colour = colour;
+        this.rowNumber = rowNumber;
+        this.columnName = columnName;
+        this.piece = null;
+    }
+
+    public boolean isOccupied() {
+        return this.piece == null;
+    }
+
     public Colour getColour() {
         return colour;
     }
@@ -28,24 +46,6 @@ public class Square {
 
     public void setPiece(Piece piece) {
         this.piece = piece;
-    }
-
-    public Square(Colour colour, int rowNumber, char columnName, Piece piece) {
-        this.colour = colour;
-        this.rowNumber = rowNumber;
-        this.columnName = columnName;
-        this.piece = piece;
-    }
-
-    public Square(Colour colour, int rowNumber, char columnName) {
-        this.colour = colour;
-        this.rowNumber = rowNumber;
-        this.columnName = columnName;
-        this.piece = null;
-    }
-
-    public boolean isOccupied() {
-        return this.piece == null;
     }
 
 }
